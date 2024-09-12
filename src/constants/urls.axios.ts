@@ -1,8 +1,6 @@
-import axios from "axios";
+const BASE_URL = "https://jsonplaceholder.typicode.com";
+const USERS_URL = `${BASE_URL}/users`;
+const POSTS_URL = `${BASE_URL}/posts`;
+const COMMENTS_URL = `${BASE_URL}/comments`;
 
-let UrlsAxios = axios.create({
-    baseURL: 'https://jsonplaceholder.typicode.com',
-    headers: {}
-})
-
-export {UrlsAxios}
+export { BASE_URL, USERS_URL, POSTS_URL, COMMENTS_URL };
