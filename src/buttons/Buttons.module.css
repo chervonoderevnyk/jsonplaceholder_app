@@ -1,0 +1,16 @@
+.button {
+  background-color: cadetblue;
+  border: none; /* Без бордера */
+  border-radius: 5px; /* Закруглені кути */
+  box-shadow: 0 4px 6px rgb(0 0 0 / 70%);
+  color: white; /* Білий текст */
+  cursor: pointer; /* Курсор як рука */
+  font-size: 12px; /* Розмір шрифту */
+  margin-top: 5px;
+  padding: 8px 12px; /* Внутрішні відступи */
+  transition: background-color 0.3s ease; /* Плавний перехід кольору фону */
+}
+
+.button:hover {
+  background-color: cornflowerblue; /* при наведенні */
+}

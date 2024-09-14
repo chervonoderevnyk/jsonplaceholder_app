@@ -1,12 +1,15 @@
-import React, { useEffect, useState } from "react";
+import React, { useContext, useEffect, useState } from "react";
 import { IComment } from "../../interfaces/IComment";
 import { CommentsAxiosService } from "../../services/axiosRaquest/CommentsAxiosService";
 import { CommentsComponent } from "../../components/comments/CommentsComponent";
+import { ChangeColor } from "../../context/Context";
 
 const CommentsPagesAxios: React.FC = () => {
   const [comments, setComments] = useState<IComment[]>([]);
   const [loading, setLoading] = useState<boolean>(true);
   const [error, setError] = useState<string | null>(null);
+
+  const { yellowColor } = useContext(ChangeColor);
 
   useEffect(() => {
     const fetchComment = async () => {
@@ -31,7 +34,7 @@ const CommentsPagesAxios: React.FC = () => {
 
   return (
     <div>
-      <h3>Users AXIOS List</h3>
+      <h3 style={{ color: yellowColor }}>Users AXIOS List</h3>
       <CommentsComponent comments={comments} />
     </div>
   );

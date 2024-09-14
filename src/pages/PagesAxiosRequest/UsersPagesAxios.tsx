@@ -1,14 +1,18 @@
-import { useEffect, useState } from "react";
-import React from "react";
+import React, { useContext, useEffect, useState } from "react";
 
 import { IUser } from "../../interfaces/IUser";
 import { UsersAxiosService } from "../../services/axiosRaquest/UsersAxiosService";
 import { UsersComponent } from "../../components/users/UsersComponent";
+import { ChangeColor, ChangeTheme } from "../../context/Context";
+import { ThemeToggleButton } from "../../buttons/ThemeToggleButton";
 
 const UsersPagesAxios: React.FC = () => {
   const [users, setUsers] = useState<IUser[]>([]);
   const [loading, setLoading] = useState<boolean>(true);
   const [error, setError] = useState<string | null>(null);
+
+  const { redColor } = useContext(ChangeColor);
+  const theme = useContext(ChangeTheme);
 
   useEffect(() => {
     const fetchUsers = async () => {
@@ -33,8 +37,9 @@ const UsersPagesAxios: React.FC = () => {
   }
 
   return (
-    <div>
-      <h3>Users AXIOS List</h3>
+    <div style={{ backgroundColor: theme.backgroundColor, color: theme.color }}>
+      <ThemeToggleButton />
+      <h3 style={{ color: redColor }}>Users AXIOS List</h3>
       <UsersComponent users={users} />
     </div>
   );

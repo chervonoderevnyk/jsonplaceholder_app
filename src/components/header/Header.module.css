@@ -1,0 +1,48 @@
+.header-container {
+  align-items: center;
+  background: linear-gradient(45deg, #007bff, #6610f2);
+  box-shadow: 0 4px 6px rgb(0 0 0 / 70%);
+  color: white;
+  display: flex;
+  flex-direction: column;
+  padding: 10px;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+}
+
+.link-group {
+  display: flex;
+  justify-content: center;
+  margin: 10px 0;
+}
+
+.link-item {
+  margin: 0 15px;
+  transition: transform 0.3s ease, color 0.3s ease;
+}
+
+.link-item a {
+  color: white;
+  font-size: 18px;
+  font-weight: bold;
+  text-decoration: none;
+  text-shadow: 1px 1px 2px rgb(0 0 0 / 20%);
+  transition: color 0.3s ease, text-shadow 0.3s ease;
+}
+
+.link-item a:hover {
+  color: #ffdd57;
+  text-shadow: 2px 2px 4px rgb(0 0 0 / 70%);
+}
+
+.link-item:hover {
+  transform: scale(1.1);
+}
+
+hr {
+  border: none;
+  border-top: 2px solid rgb(255 255 255 / 20%);
+  margin: 10px 0;
+  width: 80%;
+}
